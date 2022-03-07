@@ -2,7 +2,7 @@
 #include "fun.h"
 
 unsigned int faStr1(const char *str) {
-     bool hasNum = false;
+    bool hasNum = false;
     bool inWord = false;
     int i = 0;
     int count = 0;
@@ -44,6 +44,7 @@ unsigned int faStr2(const char *str) {
                 if (str[i] <='Z' && str[i] >='A') {
                     rightWord = true;
                 }
+                firstWord = false;
             }
             else if (rightWord) {
                 if (!(str[i] <= 'z' && str[i] >= 'a')) {
@@ -58,6 +59,7 @@ unsigned int faStr2(const char *str) {
                     rightWord = false;
                 }
                 inWord = false;
+                firstWord = true;
             }
         }
         i++;
