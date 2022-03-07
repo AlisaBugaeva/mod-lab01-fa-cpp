@@ -73,6 +73,7 @@ unsigned int faStr3(const char *str) {
     int i = 0;
     int count = 0;
     int wordNumber = 0;
+    int averageLength = 0;
 
     while (str[i]) {
         if (str[i] != ' ') {
@@ -89,6 +90,6 @@ unsigned int faStr3(const char *str) {
         }
         i++;
     }
-    count = round(count / wordNumber);
-    return count;
+    averageLength = round(count / wordNumber);
+    return averageLength;
 }
