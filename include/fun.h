@@ -2,6 +2,7 @@
 #ifndef INCLUDE_FUN_H_
 #define INCLUDE_FUN_H_
 
+#include <iostream>
 #include <cctype>
 #include <cmath>
 
