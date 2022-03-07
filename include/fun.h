@@ -3,7 +3,6 @@
 #define INCLUDE_FUN_H_
 
 #include <iostream>
-#include <cctype>
 #include <cmath>
 
 unsigned int faStr1(const char *str);
