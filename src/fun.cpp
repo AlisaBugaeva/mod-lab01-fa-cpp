@@ -68,5 +68,27 @@ unsigned int faStr2(const char *str) {
 }
 
 unsigned int faStr3(const char *str) {
-    return 0;
+    bool inWord = false;
+    bool firstWord = true;
+    int i = 0;
+    int count = 0;
+    int wordNumber = 0;
+
+    while (str[i]) {
+        if (str[i] != ' ') {
+            if (firstWord) {
+                wordNumber++;
+                firstWord = false;
+            }
+            inWord = true;
+            count++;
+        }
+        else if (str[i] == ' ') {
+                inWord = false;
+                firstWord = true;
+        }
+        i++;
+    }
+    count = round(count / wordNumber);
+    return count;
 }
