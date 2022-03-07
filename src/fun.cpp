@@ -15,12 +15,13 @@ unsigned int faStr1(const char *str) {
                     hasNum = true;
                 }
             }
-        }else if (str[i] == ' ') {
+        } else if (str[i] == ' ') {
             if (inWord) {
                 if (!hasNum) {
                     count++;
                 }
-                else hasNum = false;
+                else 
+                    hasNum = false;
                 inWord = false;
             }
         }
@@ -44,12 +45,12 @@ unsigned int faStr2(const char *str) {
                     rightWord = true;
                 }
                 firstWord = false;
-            }else if (rightWord) {
+            } else if (rightWord) {
                 if (!(str[i] <= 'z' && str[i] >= 'a')) {
                     rightWord = false;
                 }
             }
-        }else if (str[i] == ' ') {
+        } else if (str[i] == ' ') {
             if (inWord) {
                 if (rightWord) {
                     count++;
@@ -80,7 +81,7 @@ unsigned int faStr3(const char *str) {
             }
             inWord = true;
             count++;
-        }else if (str[i] == ' ') {
+        } else if (str[i] == ' ') {
                 inWord = false;
                 firstWord = true;
         }
