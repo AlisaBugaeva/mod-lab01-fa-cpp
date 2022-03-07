@@ -20,8 +20,9 @@ unsigned int faStr1(const char *str) {
                 if (!hasNum) {
                     count++;
                 }
-                else 
+                else{
                     hasNum = false;
+                }
                 inWord = false;
             }
         }
