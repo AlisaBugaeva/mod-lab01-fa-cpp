@@ -2,12 +2,14 @@
 #include "fun.h"
 
 unsigned int faStr1(const char *str) {
-    bool hasNum = false;
+     bool hasNum = false;
+    bool inWord = false;
     int i = 0;
     int count = 0;
 
-    while (str[i] ) {
+    while (str[i]) {
         if (str[i] != ' ') {
+            inWord = true;
             if (!hasNum) {
                 if (isdigit(str[i])) {
                     hasNum = true;
@@ -15,10 +17,13 @@ unsigned int faStr1(const char *str) {
             }
         }
         else if (str[i] == ' ') {
-            if (!hasNum) {
-                count++;
+            if (inWord) {
+                if (!hasNum) {
+                    count++;
+                }
+                else hasNum = false;
+                inWord = false;
             }
-            else hasNum = false;
         }
         i++;
     }
@@ -26,7 +31,38 @@ unsigned int faStr1(const char *str) {
 }
 
 unsigned int faStr2(const char *str) {
-    return 0;
+    bool rightWord = false;
+    bool inWord = false;
+    bool firstWord = true;
+    int i = 0;
+    int count = 0;
+
+    while (str[i]) {
+        if (str[i] != ' ') {
+            inWord = true;
+            if (firstWord) {
+                if (str[i] <='Z' && str[i] >='A') {
+                    rightWord = true;
+                }
+            }
+            else if (rightWord) {
+                if (!(str[i] <= 'z' && str[i] >= 'a')) {
+                    rightWord = false;
+                }
+            }
+        }
+        else if (str[i] == ' ') {
+            if (inWord) {
+                if (rightWord) {
+                    count++;
+                    rightWord = false;
+                }
+                inWord = false;
+            }
+        }
+        i++;
+    }
+    return count;
 }
 
 unsigned int faStr3(const char *str) {
