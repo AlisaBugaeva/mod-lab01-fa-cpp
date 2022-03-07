@@ -19,7 +19,7 @@ unsigned int faStr1(const char *str) {
             if (inWord) {
                 if (!hasNum) {
                     count++;
-                }else {
+                } else {
                     hasNum = false;
                 }
                 inWord = false;
